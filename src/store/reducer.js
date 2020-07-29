@@ -1,6 +1,6 @@
 import { actionTypes } from './actionTypees';
 
-const initialState = { counter: 0 };
+const initialState = { counter: 0, counterList: [] };
 
 const reducer = (state = initialState, action) => {
   if (action.type === actionTypes.INCREASE) {
@@ -17,6 +17,9 @@ const reducer = (state = initialState, action) => {
   }
   if (action.type === actionTypes.RESET) {
     return { ...state, counter: 0 };
+  }
+  if (action.type === actionTypes.RECORD_COUNTER) {
+    return { ...state, counterList: [...state.counterList, state.counter] };
   }
   return state;
 };

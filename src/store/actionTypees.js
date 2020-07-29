@@ -3,5 +3,12 @@ const DECREASE = 'DECREASE';
 const PLUS = 'PLUS';
 const MINUS = 'MINUS';
 const RESET = 'RESET';
-
-export const actionTypes = { INCREASE, DECREASE, PLUS, MINUS, RESET };
+const RECORD_COUNTER = 'RECORD_COUNTER';
+export const actionTypes = {
+  INCREASE,
+  DECREASE,
+  PLUS,
+  MINUS,
+  RESET,
+  RECORD_COUNTER,
+};
