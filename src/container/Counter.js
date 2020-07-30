@@ -5,8 +5,10 @@ import { connect } from 'react-redux';
 import { actionTypes } from '../store/actionTypes';
 import CounterList from '../component/counter/CounterList';
 import ButtonRecord from '../component/counter/ButtonRecord';
+import InputRecord from '../component/counter/InputRecord';
 
 function Counter(props) {
+  // console.log(props);
   return (
     <div>
       <CounterDisplay counter={props.ctr} />
@@ -17,6 +19,7 @@ function Counter(props) {
       <CounterControlPanel text='Reset' change={props.reset} />
       <ButtonRecord></ButtonRecord>
       <CounterList></CounterList>
+      <InputRecord></InputRecord>
     </div>
   );
 }

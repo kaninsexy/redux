@@ -18,6 +18,9 @@ const counterReducer = (state = initialState, action) => {
   if (action.type === actionTypes.RESET) {
     return { ...state, counter: 0 };
   }
+  if (action.type === actionTypes.SET_COUNTER) {
+    return { ...state, counter: action.value };
+  }
 
   return state;
 };

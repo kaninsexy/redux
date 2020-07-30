@@ -2,6 +2,7 @@ import React from 'react';
 import { actionTypes } from '../../store/actionTypes';
 import { connect } from 'react-redux';
 function ButtonRecord(props) {
+  // console.log(props);
   return (
     <div
       style={{
@@ -17,6 +18,7 @@ function ButtonRecord(props) {
   );
 }
 const mapStateToProps = (state) => {
+  // console.log(state);
   return { ctr: state.ctr.counter };
 };
 
