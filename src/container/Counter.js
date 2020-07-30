@@ -2,7 +2,7 @@ import React from 'react';
 import CounterDisplay from '../component/counter/CounterDisplay';
 import CounterControlPanel from '../component/counter/CounterControlPanel';
 import { connect } from 'react-redux';
-import { actionTypes } from '../store/actionTypees';
+import { actionTypes } from '../store/actionTypes';
 import CounterList from '../component/counter/CounterList';
 import ButtonRecord from '../component/counter/ButtonRecord';
 
@@ -20,9 +20,9 @@ function Counter(props) {
     </div>
   );
 }
-const mapStateToProps = (state /*, ownProps*/) => {
+const mapStateToProps = (state) => {
   return {
-    ctr: state.counter,
+    ctr: state.ctr.counter,
   };
 };
 

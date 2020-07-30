@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore } from 'redux';
-import rootReducer from './store/reducer';
+import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-
+import counterReducer from './store/reducer/counter';
+import counterListReducer from './store/reducer/counterList';
+const rootReducer = combineReducers({
+  ctr: counterReducer,
+  ctrList: counterListReducer,
+});
 const store = createStore(rootReducer);
 
 ReactDOM.render(

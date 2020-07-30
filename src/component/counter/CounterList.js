@@ -12,7 +12,7 @@ function CounterList(props) {
 }
 
 const mapStateToProps = (state) => {
-  return { ctrList: state.counterList };
+  return { ctrList: state.ctrList.counterList };
 };
 
 export default connect(mapStateToProps, null)(CounterList);

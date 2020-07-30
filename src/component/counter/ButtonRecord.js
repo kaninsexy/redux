@@ -1,5 +1,5 @@
 import React from 'react';
-import { actionTypes } from '../../store/actionTypees';
+import { actionTypes } from '../../store/actionTypes';
 import { connect } from 'react-redux';
 function ButtonRecord(props) {
   return (
@@ -10,15 +10,21 @@ function ButtonRecord(props) {
         margin: 'auto',
         cursor: 'pointer',
       }}
-      onClick={props.submit}
+      onClick={() => props.submit(props.ctr)}
     >
       Records
     </div>
   );
 }
-
-const mapDispatchToProps = (dispatch) => {
-  return { submit: () => dispatch({ type: actionTypes.RECORD_COUNTER }) };
+const mapStateToProps = (state) => {
+  return { ctr: state.ctr.counter };
 };
 
-export default connect(null, mapDispatchToProps)(ButtonRecord);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submit: (value) =>
+      dispatch({ type: actionTypes.RECORD_COUNTER, number: value }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ButtonRecord);

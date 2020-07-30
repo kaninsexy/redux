@@ -1,8 +1,8 @@
-import { actionTypes } from './actionTypees';
+import { actionTypes } from '../actionTypes';
 
-const initialState = { counter: 0, counterList: [] };
+const initialState = { counter: 0 };
 
-const reducer = (state = initialState, action) => {
+const counterReducer = (state = initialState, action) => {
   if (action.type === actionTypes.INCREASE) {
     return { ...state, counter: state.counter + 1 };
   }
@@ -18,10 +18,8 @@ const reducer = (state = initialState, action) => {
   if (action.type === actionTypes.RESET) {
     return { ...state, counter: 0 };
   }
-  if (action.type === actionTypes.RECORD_COUNTER) {
-    return { ...state, counterList: [...state.counterList, state.counter] };
-  }
+
   return state;
 };
 
-export default reducer;
+export default counterReducer;
